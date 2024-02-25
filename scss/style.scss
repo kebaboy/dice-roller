@@ -56,13 +56,12 @@ $dots-size: $dice-size / 100 * 23;
         width: $dice-size;
         height: $dice-size;
         transition: all 0.3s ease 0s;
-        // transform: rotateX(270deg);
-        transform: rotateY(-90deg);
+        // transform: rotateX(90deg);
+        // transform: rotateY(-180deg);
         // transform: rotateY(180deg);
         // transform: rotateY(90deg);
         // perspective: 800px;
         transform-style: preserve-3d;
-        // animation: roll .4s infinite;
 		// .dice-roller__side
 
 		&__side {
@@ -164,10 +163,6 @@ $dots-size: $dice-size / 100 * 23;
         }
 }
 
-@keyframes roll {
-    0% { transform: rotateX(0deg) rotateY(0deg); }
-    25% { transform: rotateX(-90deg) rotateY(0deg); }
-    50% { transform: rotateX(-90deg) rotateY(90deg); }
-    75% { transform: rotateX(0deg) rotateY(90deg); }
-    100% { transform: rotateX(0deg) rotateY(0deg); }
+@keyframes rolling {
+    50% { transform: rotateX(910deg) rotateY(910deg); }
 }

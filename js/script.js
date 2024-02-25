@@ -1,20 +1,29 @@
 const dice = document.querySelector(".dice-roller");
 dice.addEventListener("click", function() {
-    // const randomRotateNumber = Math.floor(Math.random() * 4) + 1;
-    // switch (randomRotateNumber) {
-    //     case (1):
-            
-    // }
-    //! фикс поворота вокруг оси
-    const randomDirectionX = Math.floor(Math.random() * 3) + 1; // -1, 0 или 1
-    const randomDirectionY = Math.floor(Math.random() * 3) + 1 ; // -1, 0 или 1
+    const randomRotateNumber = Math.floor(Math.random() * 6) + 1;
+    this.style.animation = 'rolling 5s';
+    setTimeout (function() {
+        switch(randomRotateNumber) {
+            case 1:
+                dice.style.transform = "rotateX(0deg) rotateY(0deg)";
+                break;
+            case 2:
+                dice.style.transform = "rotateX(90deg) rotateY(0deg)";
+                break;
+            case 3:
+                dice.style.transform = "rotateX(180deg) rotateY(0deg)";
+                break;
+            case 4:
+                dice.style.transform = "rotateX(270deg) rotateY(0deg)";
+                break;
+            case 5:
+                dice.style.transform = "rotateX(0deg) rotateY(90deg)";
+                break;
+            case 6:
+                dice.style.transform = "rotateX(0deg) rotateY(-90deg)";
+                break;
+        }
+        dice.style.animation = "none";
+    }, 5050);
 
-    // Вычисляем новые углы поворота относительно текущего положения
-    const newRotation = {
-        x: Math.floor(randomDirectionX * 90),
-        y: Math.floor(randomDirectionY * 90),
-    };
-
-    // Применяем новые углы поворота к кубу
-    this.style.transform = `rotateX(${newRotation.x}deg) rotateY(${newRotation.y}deg)`;
 })
